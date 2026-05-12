@@ -1,0 +1,246 @@
+.navbar {
+  background-color: var(--color-white);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.dark .navbar {
+  background-color: rgba(15, 23, 42, 0.94);
+  box-shadow: 0 1px 18px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;
+}
+
+.logo {
+  width: 2.5rem;
+}
+
+.title-text {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--color-dark);
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 700;
+  animation-duration: 2s; /* la animación dura 2 segundos */
+  animation-delay: 0.3s; /* espera 0.3 segundos antes de empezar */
+}
+
+.btn-login {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.8rem;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 3px 20px rgba(29, 118, 226, 0.35);
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.btn-login:hover {
+  opacity: 0.88;
+  color: var(--color-white);
+}
+
+/* Mobile controls: login + hamburger */
+.mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hamburger */
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-dark);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Dropdown menu on mobile */
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-bg-card);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 8px 16px 16px;
+  z-index: 999;
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.nav-menu.nav-menu--open {
+  display: block;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-gray-1);
+  font-size: 0.95rem;
+  padding: 12px 4px;
+  display: block;
+  border-bottom: 1px solid var(--color-border);
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* Menú desplegable activo en mobile */
+.nav-menu--open {
+  display: block;
+}
+
+.dark .nav-link {
+  color: var(--white-90);
+}
+
+.theme-toggle {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-soft);
+  color: var(--color-dark);
+  border-radius: 999px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.theme-toggle:hover {
+  background: var(--color-blue-soft);
+  border-color: var(--color-primary);
+}
+
+.dark .theme-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.mobile-only {
+  display: inline-flex;
+}
+
+.desktop-only {
+  display: none !important;
+}
+
+/* ===== DESKTOP (992px+) ===== */
+@media (min-width: 992px) {
+  .navbar-inner {
+    padding: 10px 32px;
+  }
+
+  .mobile-only {
+    display: none !important;
+  }
+  .mobile-controls .btn-login {
+    display: none;
+  }
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    background: transparent;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .nav-link {
+    padding: 6px 16px;
+    border: none;
+    font-size: 0.9rem;
+  }
+
+  .desktop-only {
+    display: inline-block !important;
+    margin-left: 20px;
+  }
+
+  .logo {
+    width: 3rem;
+  }
+  .title-text {
+    font-size: 1.1rem;
+  }
+  .btn-login {
+    font-size: 0.875rem;
+    padding: 8px 16px;
+  }
+}
