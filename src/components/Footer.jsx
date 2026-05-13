@@ -35,7 +35,7 @@ export default function Footer() {
             <h5>Donar</h5>
             <ul>
               <li><Link to="/formas-de-ayudar">Formas de ayudar</Link></li>
-              <li><Link to="/causas">Causas</Link></li>
+              <li><Link to="/campanas">Campañas</Link></li>
               <li><Link to="/como-donar">Como donar </Link></li>
               <li><Link to="/personas-beneficiadas">Personas beneficiadas</Link></li>
             </ul>
@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
 
         <hr />
-        <p className="copyright-text">© 2026 Todos los derechos reservados. Donaton Inc.</p>
+        <p className="copyright-text">© 2026 Todos los derechos reservados. Donaton.</p>
       </div>
     </footer>
   );
