@@ -1,0 +1,247 @@
+.register-hero {
+  position: relative;
+  height: 45vh;
+  min-height: 320px;
+  background:
+    linear-gradient(
+      rgba(10,22,50,0.72),
+      rgba(10,22,50,0.72)
+    ),
+    url('src/assets/ayuda_incendio.jpg');
+
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.register-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  color: white;
+}
+
+.register-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.register-hero-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* SECTION */
+.register-section {
+  padding: 80px 20px;
+  background: var(--dn-gray-bg);
+}
+
+.register-container {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+  align-items: center;
+}
+
+/* INFO */
+.register-info h2 {
+  font-size: 2.3rem;
+  color: var(--dn-navy);
+  margin-bottom: 18px;
+}
+
+html.dark .register-info h2 {
+  color: white;
+}
+
+.register-info p {
+  color: var(--dn-gray-1);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.register-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(230,57,70,0.12);
+  color: var(--dn-red);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.register-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.register-benefits li {
+  margin-bottom: 14px;
+  color: var(--dn-gray-1);
+  font-weight: 500;
+}
+
+/* CARD */
+.register-card {
+  background: var(--dn-card-bg);
+  border: 1px solid var(--dn-border);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: var(--dn-shadow-lg);
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--dn-navy);
+}
+
+html.dark .input-group label {
+  color: white;
+}
+
+.input-group input {
+  height: 54px;
+  border-radius: 14px;
+ border: 1px solid #3870bb;
+  background: transparent;
+  padding: 0 16px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.input-group input:focus {
+  border-color: var(--dn-red);
+}
+
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  width: 100%;
+}
+
+.show-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: var(--dn-red);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.register-btn {
+  height: 54px;
+  border: none;
+  border-radius: 14px;
+  background: var(--dn-red);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.register-btn:hover {
+  background: var(--dn-red-dark);
+  transform: translateY(-2px);
+}
+
+.login-link {
+  text-align: center;
+  color: var(--dn-gray-1);
+  font-size: 0.95rem;
+}
+
+.login-link a {
+  color: var(--dn-red);
+  font-weight: 700;
+}
+
+.input-group select {
+  width: 100%;
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  border: 1px solid #3870bb;
+
+
+  background: transparent;
+
+  color:black;
+
+
+  font-size: 0.95rem;
+
+  outline: none;
+}
+.input-group select:focus {
+  border-color: var(--dn-red);  
+}
+
+
+
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+  .register-container {
+    grid-template-columns: 1fr;
+  }
+
+  .register-info {
+    text-align: center;
+  }
+
+  .register-benefits li {
+    justify-content: center;
+  }
+
+  .register-hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .register-card {
+    padding: 28px 22px;
+  }
+
+  .register-hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .register-info h2 {
+    font-size: 1.8rem;
+  }
+}
