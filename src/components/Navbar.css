@@ -35,7 +35,7 @@
 }
 
 .title-text {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Rubik", sans-serif;
   color: var(--color-dark);
   font-size: 1rem;
   margin: 0;
@@ -47,7 +47,7 @@
 .btn-login {
   background-color: var(--color-primary);
   color: var(--color-white);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 0.8rem;
   padding: 7px 14px;
   border-radius: 999px;

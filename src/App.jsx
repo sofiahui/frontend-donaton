@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Home from './pages/Home';
-//import Login from './pages/Login';
-//import Donaciones from './pages/Donaciones';
-//import Logistica from './pages/Logistica';
-//import Necesidades from './pages/Necesidades';
+import Login from './pages/Login';
+import Registro from './pages/Registro';
+import Donaciones from './pages/Donaciones';
+import Logistica from './pages/Logistica';
+import Necesidades from './pages/Necesidades';
+import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar';
 
 function PrivateRoute({ children }) {
@@ -47,40 +49,89 @@ export default function App() {
   };
 
   return (
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={
-              <Layout theme={theme} onToggleTheme={switchTheme}>
-                <Home />
-              </Layout>
-            } />
-            <Route path="/home" element={
-              <Layout theme={theme} onToggleTheme={switchTheme}>
-                <Home />
-              </Layout>
-            } />
-           {/* <Route path="/login" element={<Login />} />
-            <Route path="/donaciones" element={
-              <PrivateRoute>
-                <Layout theme={theme} onToggleTheme={switchTheme}>
-                  <Donaciones />
-                </Layout>
-              </PrivateRoute>
-            } />
-            <Route path="/logistica" element={
-              <PrivateRoute>
-                <Layout theme={theme} onToggleTheme={switchTheme}>
-                  <Logistica />
-                </Layout>
-              </PrivateRoute>
-            } />
-            <Route path="/necesidades" element={
-              <PrivateRoute>
-                <Layout theme={theme} onToggleTheme={switchTheme}>
-                  <Necesidades />
-                </Layout>
-              </PrivateRoute>*/}
-        </Routes>
+       <BrowserRouter>
+          <Routes>
+
+                    <Route
+                      path="/"
+                      element={
+                        <Layout theme={theme} onToggleTheme={switchTheme}>
+                          <Home />
+                        </Layout>
+                      }
+                    />
+
+                    <Route
+                      path="/home"
+                      element={
+                        <Layout theme={theme} onToggleTheme={switchTheme}>
+                          <Home />
+                        </Layout>
+                      }
+                    />
+
+                   <Route
+                      path="/login"
+                      element={
+                        <Layout theme={theme} onToggleTheme={switchTheme}>
+                          <Login />
+                        </Layout>
+                      }
+                    />
+                    
+                    <Route
+                      path="/donaciones"
+                      element={
+                        <PrivateRoute>
+                          <Layout theme={theme} onToggleTheme={switchTheme}>
+                            <Donaciones />
+                          </Layout>
+                        </PrivateRoute>
+                      }
+                    />
+
+                    <Route
+                      path="/logistica"
+                      element={
+                        <PrivateRoute>
+                          <Layout theme={theme} onToggleTheme={switchTheme}>
+                            <Logistica />
+                          </Layout>
+                        </PrivateRoute>
+                      }
+                    />
+
+                    <Route
+                      path="/necesidades"
+                      element={
+                        <PrivateRoute>
+                          <Layout theme={theme} onToggleTheme={switchTheme}>
+                            <Necesidades />
+                          </Layout>
+                        </PrivateRoute>
+                      }
+                    />
+
+                    <Route
+                      path="/dashboard"
+                      element={
+                        <PrivateRoute>
+                          <Layout theme={theme} onToggleTheme={switchTheme}>
+                            <Dashboard />
+                          </Layout>
+                        </PrivateRoute>
+                      }
+                    />
+                    <Route
+                      path="/registro"
+                      element={
+                        <Layout theme={theme} onToggleTheme={switchTheme}>
+                          <Registro />
+                        </Layout>
+                      }
+                    />
+
+          </Routes>
     </BrowserRouter>
   );
 }

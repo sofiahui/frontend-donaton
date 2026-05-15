@@ -2,7 +2,7 @@
    DONATON — Global Design System
    Paleta: azul #0f2a4f · rojo #e63946 · blanco
    ============================================= */
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 /* ── CSS Variables (Design Tokens) ────────── */
 :root {
   /* Primary Colors */
@@ -67,7 +67,7 @@ body {
   padding: 0;
   background: var(--dn-gray-bg);
   color: var(--dn-navy);
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Rubik', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
