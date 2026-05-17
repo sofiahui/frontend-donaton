@@ -17,6 +17,11 @@ Copiar
 .dash-hero {
   background: var(--dn-navy);
   padding: 36px 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
   position: relative;
   overflow: hidden;
 }
@@ -29,7 +34,7 @@ Copiar
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: rgba(230, 57, 70, 0.12);
+  background: none;
 }
  
 .dash-hero::after {
@@ -84,16 +89,17 @@ Copiar
 }
  
 .dash-hero__subtitle {
-  position: relative;
-  z-index: 2;
-  font-size: 0.875rem;
+  max-width: 680px;
+  font-size: 1rem;
   color: rgba(255,255,255,0.65);
   margin: 0;
-  line-height: 1.6;
-  max-width: 560px;
+  line-height: 1.7;
+  width: 100%;
   font-family: 'Rubik', sans-serif;
+  word-break: normal;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
- 
 /* ── Secciones ─────────────────────────────── */
 .dash-section {
   padding: 28px 0;
@@ -445,9 +451,8 @@ html.dark .badge--danger { color: #fca5a5; }
    DESKTOP 992px+
    ============================================= */
 @media (min-width: 992px) {
-  .dash-hero { padding: 52px 20px 44px; }
+  .dash-hero { padding: 100px 30px 44px; }
   .dash-hero__inner { max-width: 1160px; margin: 0 auto 12px; }
-  .dash-hero__subtitle { margin: 0 auto; padding: 0 calc((100% - 1160px) / 2); }
   .dash-hero__name { font-size: 2rem; }
  
   .dash-container { padding: 0 20px; }

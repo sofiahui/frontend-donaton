@@ -38,12 +38,7 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(10, 22, 50, 0.82) 0%,
-    rgba(10, 22, 50, 0.38) 45%,
-    rgba(10, 22, 50, 0.08) 100%
-  );
+  background:none;
 }
  
 .hero-content {
@@ -450,12 +445,7 @@ html.dark .card__title { color: var(--dn-white); }
   flex-direction: column;
   justify-content: flex-end;
   padding: 18px;
-  background: linear-gradient(
-    to top,
-    rgba(10, 22, 50, 0.85) 0%,
-    rgba(10, 22, 50, 0.2) 55%,
-    transparent 100%
-  );
+  background: none;
   color: white;
 }
  

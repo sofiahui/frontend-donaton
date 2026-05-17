@@ -36,7 +36,7 @@
 
 .title-text {
   font-family: "Rubik", sans-serif;
-  color: var(--color-dark);
+  color: var(--dn-navy-mid);
   font-size: 1rem;
   margin: 0;
   font-weight: 700;
@@ -225,7 +225,7 @@
   .nav-link {
     padding: 6px 16px;
     border: none;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 
   .desktop-only {
@@ -237,7 +237,7 @@
     width: 3rem;
   }
   .title-text {
-    font-size: 1.1rem;
+    font-size: 1.8rem;
   }
   .btn-login {
     font-size: 0.875rem;

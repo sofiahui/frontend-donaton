@@ -2,11 +2,7 @@
   position: relative;
   height: 45vh;
   min-height: 320px;
-  background:
-    linear-gradient(
-      rgba(10,22,50,0.72),
-      rgba(10,22,50,0.72)
-    ),
+  background:none,
     url('src/assets/ayuda_incendio.jpg');
 
   background-size: cover;

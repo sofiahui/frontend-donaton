@@ -150,7 +150,7 @@ export default function Logistica() {
                   <label>Centro de acopio asignado</label>
                   <select name="centroAcopioId" value={formEnvio.centroAcopioId} onChange={handleChange} required>
                     <option value="">Selecciona un centro</option>
-                    {centros.filter(c => c.estado === 'activo').map(c => (
+                    {centros.map(c => (
                       <option key={c.id} value={c.id}>{c.nombre} — {c.region}</option>
                     ))}
                   </select>

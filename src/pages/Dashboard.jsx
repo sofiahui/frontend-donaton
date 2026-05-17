@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Package, Truck, AlertTriangle, Building2, Gift, HandHelping, MapPin, ClipboardList } from 'lucide-react';
 import './Dashboard.css';
+import Footer from '../components/Footer';
  
 function useInView(ref, threshold = 0.15) {
   const [inView, setInView] = useState(false);
@@ -239,7 +240,7 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
- 
     </div>
+    
   );
 }

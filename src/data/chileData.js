@@ -21,7 +21,6 @@ const chileData = {
     "El Bosque",
     "Recoleta",
     "Lo Espejo",
-    "San Ramón",
     "Vitacura",
     "La Granja",
     "Pedro Aguirre Cerda",

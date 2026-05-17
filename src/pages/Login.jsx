@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
 import Footer from '../components/Footer';
 import './Login.css';
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail]             = useState('');
+  const [password, setPassword]       = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [keepLogged, setKeepLogged] = useState(false);
+  const [keepLogged, setKeepLogged]   = useState(false);
+  const [error, setError]             = useState('');
 
   const navigate = useNavigate();
 
@@ -16,44 +17,27 @@ export default function Login() {
     e.preventDefault();
 
     if (!email || !password) {
-      alert('Por favor, completa todos los campos.');
+      setError('Por favor completa todos los campos.');
       return;
     }
 
     try {
+      const response = await api.post('/auth/login', { email, password });
 
-      // PETICION A TU API GATEWAY
-      const response = await axios.post(
-        'http://localhost:8080/api/login',
-        {
-          email,
-          password
-        }
-      );
+      localStorage.setItem('token',    response.data.token);
+      localStorage.setItem('username', response.data.username || 'Usuario');
 
-      // GUARDAR DATOS DEL USUARIO
-      localStorage.setItem(
-        'username',
-        response.data.username || 'Usuario'
-      );
+      if (keepLogged) {
+        localStorage.setItem('keepLogged', 'true');
+      }
 
-      // OPCIONAL: guardar token
-      localStorage.setItem(
-        'token',
-        response.data.token
-      );
-
-      alert('¡Bienvenido a Donaton!');
-
-      // REDIRECCION
       navigate('/dashboard');
 
-    } catch (error) {
-      console.log(error);
-
-      alert(
-        error.response?.data?.message ||
-        'Error al iniciar sesión'
+    } catch (err) {
+      setError(
+        err.response?.data?.error ||
+        err.response?.data?.message ||
+        'Credenciales  inválidas'
       );
     }
   };
@@ -64,25 +48,27 @@ export default function Login() {
         <div className="login-split">
           {/* Left side - coworking image */}
           <div className="coworking-side">
-          </div>
-
+          <img src="/src/assets/donatonejemplo.png" alt="Donaton logo" />
+        </div>
           {/* Right side - form */}
           <div className="form-side">
             <div className="form-container">
               <div className="login-hero">
-                <h1>Welcome Back</h1>
-                <h3>Please enter your details to access your dashboard.</h3>
+                <h1>Bienvenido a Donaton</h1>
+                <div className="ingresa-error">
+                <h3>Por favor, ingresa tus datos para acceder a tu dashboard.</h3>
+                </div>
               </div>
 
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label htmlFor="email">Email Address</label>
+                  <label htmlFor="email">Email </label>
                   <div className="input-icon-wrap">
                     <span className="input-icon">✉</span>
                     <input
                       type="email"
                       id="email"
-                      placeholder="alex@example.com"
+                      placeholder="alex@ejemplo.com"
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                     />
@@ -91,8 +77,8 @@ export default function Login() {
 
                 <div className="form-group">
                   <div className="label-row">
-                    <label htmlFor="password">Password</label>
-                    <a href="#">Forgot Password?</a>
+                    <label htmlFor="password">Contraseña</label>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
                   </div>
                   <div className="input-icon-wrap">
                     <span className="input-icon">🔒</span>
@@ -118,14 +104,15 @@ export default function Login() {
                       checked={keepLogged}
                       onChange={e => setKeepLogged(e.target.checked)}
                     />
-                    <label htmlFor="keepLogged">Keep me logged in</label>
+                    <label htmlFor="keepLogged">Mantenerme conectado</label>
                   </div>
                 </div>
+                {error && <div className="error-message">{error}</div>}
 
-                <button type="submit" className="submit-btn">Sign In</button>
+                <button type="submit" className="submit-btn">Iniciar sesión</button>
               </form>
 
-              <div className="divider"><span>OR CONTINUE WITH</span></div>
+              <div className="divider"><span>O CONTINUAR CON </span></div>
 
               <div className="social-login">
                 <button className="google-btn">G Google</button>
@@ -133,14 +120,14 @@ export default function Login() {
               </div>
 
               <div className="create-account">
-                <span>Don't have an account?</span>
-                <Link to="/registro">Create an account</Link>
+                <span>No tienes cuenta?</span>
+                <Link to="/registro">Registrate</Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }

@@ -524,6 +524,7 @@ html.dark .centro-card__name { color: var(--dn-white); }
 /* Barra de capacidad */
 .centro-card__cap {}
 
+
 .cap-bar {
   height: 6px;
   background: var(--dn-gray-bg);

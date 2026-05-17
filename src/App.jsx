@@ -8,6 +8,7 @@ import Logistica from './pages/Logistica';
 import Necesidades from './pages/Necesidades';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function PrivateRoute({ children }) {
   const token = localStorage.getItem('token');
@@ -20,6 +21,8 @@ function Layout({ children, theme, onToggleTheme }) {
     <>
       <Navbar theme={theme} onToggleTheme={onToggleTheme} />
       {children}
+
+      <Footer theme ={theme} onToggleTheme={onToggleTheme} />
     </>
   );
 }

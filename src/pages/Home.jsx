@@ -142,9 +142,9 @@ export default function Home() {
         <div className="features-inner">
           <div className="features__stats" ref={statsRef}>
             {[
-              { value: '+1.300.000',  label: 'Beneficiados'    },
+              { value: '+300.000',  label: 'Beneficiados'    },
               { value: '+5.000', label: 'Voluntarios'      },
-              { value: '+3.000',  label: 'Donaciones' },
+              { value: '+30.000',  label: 'Donaciones' },
               { value: '100%', label: 'Transparencia'    },
             ].map((s, i) => (
               <div
@@ -248,7 +248,6 @@ export default function Home() {
         </section>
       </FadeIn>
 
-      <Footer />
     </>
   );
 }
