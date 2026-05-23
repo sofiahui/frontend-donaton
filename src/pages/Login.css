@@ -8,7 +8,7 @@ Copiar
  
 .login-page-wrapper {
   min-height: 100vh;
-  padding-top: 56px;
+  padding-top: calc(56px + var(--announcement-bar-height));
 }
  
 .login-split {

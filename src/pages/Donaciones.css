@@ -2,7 +2,7 @@
 .page-wrapper {
   background: var(--dn-gray-bg);
   min-height: 100vh;
-  padding-top: 56px;
+  padding-top: calc(56px + var(--announcement-bar-height));
   padding-bottom: 3rem;
 }
 
