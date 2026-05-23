@@ -5,6 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 /* ── CSS Variables (Design Tokens) ────────── */
 :root {
+  /* Announcement bar height — used by page wrappers for top offset */
+  --announcement-bar-height: 36px;
+
   /* Primary Colors */
   --dn-navy:       #0f2a4f;
   --dn-navy-mid:   #1a3f72;

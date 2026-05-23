@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import AnnouncementBar from './AnnouncementBar';
 import './Navbar.css';
 
 export default function Navbar({ theme, onToggleTheme }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <header>
+    <header className="site-header">
+      <AnnouncementBar />
       <nav className="navbar">
         <div className="container-fluid navbar-inner">
           <Link to="/" className="title">

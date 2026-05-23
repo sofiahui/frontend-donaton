@@ -18,7 +18,7 @@ body {
   min-height: 480px;
   max-height: 780px;
   overflow: hidden;
-  margin-top: 56px;
+  margin-top: calc(56px + var(--announcement-bar-height));
 }
  
 .hero-slide {
